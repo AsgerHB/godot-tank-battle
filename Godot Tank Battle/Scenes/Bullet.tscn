@@ -10,12 +10,11 @@ radius = 2.29943
 position = Vector2( 220, 220 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
-a = 100.0
-b = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.0286424, 0.0297857 )
 texture = ExtResource( 1 )
