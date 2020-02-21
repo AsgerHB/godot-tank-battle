@@ -8,14 +8,19 @@
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
 position = Vector2( 34.1175, 281.402 )
+scale = Vector2( 1, 1 )
 
 [node name="Tank2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 538, 53 )
+scale = Vector2( 1, 1 )
 is_player2 = true
 
 [node name="Bullet" parent="." instance=ExtResource( 2 )]
 position = Vector2( 29.135, 33.1075 )
+scale = Vector2( 1, 1 )
 
 [node name="Scrap wall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 223.172, 264.147 )
-scale = Vector2( 3, 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 2, 2 )
