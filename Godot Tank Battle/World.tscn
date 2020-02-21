@@ -6,16 +6,141 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+
 [node name="Tank" parent="." instance=ExtResource( 1 )]
-position = Vector2( 34.1175, 281.402 )
+position = Vector2( -208.57, 86.1368 )
 
 [node name="Tank2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 538, 53 )
+position = Vector2( 309.26, -58.5804 )
 is_player2 = true
 
 [node name="Bullet" parent="." instance=ExtResource( 2 )]
 position = Vector2( 29.135, 33.1075 )
 
-[node name="Scrap wall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 223.172, 264.147 )
-scale = Vector2( 3, 3 )
+[node name="Env" type="Node2D" parent="."]
+
+[node name="Scrap wall" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 32, 608 )
+
+[node name="Scrap wall2" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 96, 608 )
+
+[node name="Scrap wall3" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 160, 608 )
+
+[node name="Scrap wall4" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 224, 608 )
+
+[node name="Scrap wall5" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 288, 608 )
+
+[node name="Scrap wall6" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 352, 608 )
+
+[node name="Scrap wall16" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -352, 608 )
+
+[node name="Scrap wall15" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -288, 608 )
+
+[node name="Scrap wall14" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -224, 608 )
+
+[node name="Scrap wall13" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -160, 608 )
+
+[node name="Scrap wall12" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -96, 608 )
+
+[node name="Scrap wall11" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -32, 608 )
+
+[node name="Scrap wall22" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -736, 608 )
+
+[node name="Scrap wall21" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -672, 608 )
+
+[node name="Scrap wall20" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -608, 608 )
+
+[node name="Scrap wall19" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -544, 608 )
+
+[node name="Scrap wall18" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -480, 608 )
+
+[node name="Scrap wall17" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -416, 608 )
+
+[node name="Scrap wall28" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 416, 608 )
+
+[node name="Scrap wall27" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 480, 608 )
+
+[node name="Scrap wall26" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 544, 608 )
+
+[node name="Scrap wall25" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 608, 608 )
+
+[node name="Scrap wall24" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 672, 608 )
+
+[node name="Scrap wall23" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 736, 608 )
+
+[node name="Scrap wall7" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 160, 96 )
+
+[node name="Scrap wall29" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 160, 32 )
+
+[node name="Scrap wall30" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 160, -32 )
+
+[node name="Scrap wall8" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( 96, -32 )
+
+[node name="Scrap wall34" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -541.135, 161.107 )
+
+[node name="Scrap wall33" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -541.135, 97.1075 )
+
+[node name="Scrap wall32" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -541.135, 33.1075 )
+
+[node name="Scrap wall31" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -605.135, 33.1075 )
+
+[node name="Scrap wall40" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -349.135, -224 )
+
+[node name="Scrap wall39" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -349.135, -288 )
+
+[node name="Scrap wall38" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -349.135, -352 )
+
+[node name="Scrap wall37" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -413.135, -352 )
+
+[node name="Scrap wall9" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -160, -96 )
+
+[node name="Scrap wall41" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -288, -160 )
+
+[node name="Scrap wall10" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -352, 224 )
+
+[node name="Scrap wall35" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -480, 160 )
+
+[node name="Scrap wall36" parent="Env" instance=ExtResource( 3 )]
+position = Vector2( -288, -225.107 )
