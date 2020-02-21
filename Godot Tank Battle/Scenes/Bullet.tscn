@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/sprites/shapes/circle.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2.29943
+
+[node name="Bullet" type="KinematicBody2D"]
+position = Vector2( 220, 220 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 2 )
+a = 100.0
+b = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.0286424, 0.0297857 )
+texture = ExtResource( 1 )
