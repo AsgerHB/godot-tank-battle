@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Scrap wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/sprites/blocks/environment/grass3.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 2, 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1016.0
+margin_top = -624.0
+margin_right = 1024.0
+margin_bottom = 608.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
 position = Vector2( -208.57, 86.1368 )
