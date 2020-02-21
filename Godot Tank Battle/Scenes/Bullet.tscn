@@ -7,7 +7,6 @@
 radius = 2.29943
 
 [node name="Bullet" type="KinematicBody2D"]
-position = Vector2( 220, 220 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 
