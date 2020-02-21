@@ -5,8 +5,8 @@ export(PackedScene) var Bullet
 
 func shoot():
 	var b = Bullet.instance()
-	b.start(self.position, rotation)
-	get_parent().add_child(b)
+	b.start(self.get_global_position(), get_parent().rotation + PI)
+	get_parent().get_parent().add_child(b)
 
 func _process(delta):
 	if is_player2:
