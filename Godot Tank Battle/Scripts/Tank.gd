@@ -1,10 +1,13 @@
 extends KinematicBody2D
 
-export var speed = 200
-export var rot_speed = 0.085
-var velocity = Vector2()
+export var speed: float = 200
+export var rot_speed: float = 0.085
+var velocity: Vector2 = Vector2()
 
 export(bool) var is_player2
+
+func _ready():
+	$ShootyPoint.is_player2 = is_player2
 
 func get_input():
 	velocity = Vector2()
