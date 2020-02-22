@@ -2,7 +2,10 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 
-export var speed: float = 100
+export(float) var speed = 100
+export(float) var lifetime = 1
+
+var age: float = 0
 var velocity: Vector2
 
 func start(pos, dir):
@@ -11,6 +14,10 @@ func start(pos, dir):
 	velocity = Vector2(speed, 0).rotated(rotation)
 
 func _physics_process(delta):
+	age += delta
+	if(age > lifetime):
+		self.queue_free()
+	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.normal)
