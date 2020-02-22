@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 
-export var speed: float = 100
+export var speed: float = 300
 var velocity: Vector2
 
 func start(pos, dir):

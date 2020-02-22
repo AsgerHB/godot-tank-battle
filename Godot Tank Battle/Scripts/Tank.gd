@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var speed: float = 200
-export var rot_speed: float = 0.085
+export var rot_speed: float = 0.065
 var velocity: Vector2 = Vector2()
 
 export(bool) var is_player2
@@ -18,7 +18,7 @@ func get_input():
 		rotation += rot_speed
 
 	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2(-speed / 2, 0).rotated(rotation)
+		velocity = Vector2(-speed / 3, 0).rotated(rotation)
 	if Input.is_action_pressed("ui_down"):
 		velocity = Vector2(speed, 0).rotated(rotation)
 
