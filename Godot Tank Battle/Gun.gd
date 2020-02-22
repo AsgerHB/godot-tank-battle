@@ -9,10 +9,14 @@ func shoot():
 	var b = Bullet.instance()
 	var spawn_rotation = get_parent().rotation + PI
 	var spawn_direction_vector = Vector2(1, 0).rotated(spawn_rotation)
-	var spawn_position = self.get_global_position() + spawn_direction_vector * spawn_distance
+
+	var spawn_position = get_global_position() + spawn_direction_vector * spawn_distance
+	print(get_global_position())
+	
 	b.start(spawn_position, spawn_rotation)
 	b.lifetime = bullet_lifetime
-	get_parent().get_parent().add_child(b)
+	
+	get_tree().get_root().add_child(b)
 
 func _process(delta):
 	if is_player2:

@@ -10,17 +10,17 @@
 position = Vector2( 510.807, 296.073 )
 script = ExtResource( 3 )
 
+[node name="Camera2D" type="Camera2D" parent="Cam"]
+position = Vector2( 348.129, 302.58 )
+scale = Vector2( 94.1852, -19.5017 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
 [node name="Player" parent="Cam" instance=ExtResource( 1 )]
 position = Vector2( 146.218, 106.512 )
 
 [node name="Player2" parent="Cam" instance=ExtResource( 1 )]
 position = Vector2( 675.666, 445.559 )
 is_player2 = true
-
-[node name="Camera2D" type="Camera2D" parent="Cam"]
-position = Vector2( 348.129, 302.58 )
-scale = Vector2( 94.1852, -19.5017 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
