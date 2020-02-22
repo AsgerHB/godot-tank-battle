@@ -3,18 +3,24 @@ extends KinematicBody2D
 export(float) var speed = 200
 export(float) var rot_speed = 0.05
 export(bool) var is_player2
+export(PackedScene) var tracks
+export(float) var track_interval = 3
 
 var velocity: Vector2 = Vector2()
+
+var last_track_pos: Vector2
 
 var is_dead = false
 
 func bullet_hit():
 	is_dead = true
-	self.get_node("Wreck").visible = true
-	self.get_node("Vehicle").visible = false
+	$Wreck.visible = true
+	$Vehicle.visible = false
+	$CollisionShape2D.disabled = true
 
 func _ready():
 	$ShootyPoint.is_player2 = is_player2
+	last_track_pos = self.get_global_position()
 
 func get_input():
 	velocity = Vector2()
@@ -42,6 +48,16 @@ func get_input2():
 	if Input.is_action_pressed("down2"):
 		velocity = Vector2(speed / 1.5, 0).rotated(rotation)
 
+func draw_tracks():
+	var current_pos = self.get_global_position()
+	
+	if last_track_pos.distance_to(current_pos) > track_interval:
+		last_track_pos = current_pos
+		var t = tracks.instance()
+		t.position = current_pos
+		t.rotation = self.rotation
+		get_tree().get_root().add_child(t)
+
 func _physics_process(delta):
 	if is_dead:
 		return
@@ -53,3 +69,5 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity)
 	velocity = Vector2.ZERO
+	
+	draw_tracks()

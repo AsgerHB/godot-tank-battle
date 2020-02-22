@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/blocks/turrets/scatter.png" type="Texture" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/mechs/mechs/omega-mech-armor.png" type="Texture" id=5]
 [ext_resource path="res://sprites/blocks/extra/rubble-2-0.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/tracks.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.4777, 22.3164 )
 
 [node name="Tank" type="KinematicBody2D"]
 script = ExtResource( 1 )
+tracks = ExtResource( 7 )
 
 [node name="ShootyPoint" type="Node2D" parent="."]
 position = Vector2( -25, 0.119 )
