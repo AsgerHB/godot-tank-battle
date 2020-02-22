@@ -26,3 +26,4 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.normal)
 		if collision.collider.has_method("bullet_hit"):
 			collision.collider.bullet_hit()
+			queue_free()

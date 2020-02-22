@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Godot Tank Battle"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [input]
 
 left2={

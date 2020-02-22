@@ -42,7 +42,7 @@ func shoot():
 	b.start(spawn_position, spawn_rotation)
 	b.lifetime = bullet_lifetime
 	
-	get_tree().get_root().add_child(b)
+	get_tree().get_root().get_child(0).add_child(b)
 	b.shooter = self
 
 func register_bullet_freed():
