@@ -5,8 +5,10 @@ export(float) var rot_speed = 0.05
 export(bool) var is_player2
 
 var velocity: Vector2 = Vector2()
-
 var is_dead = false
+
+const restart_time: float = 3.0
+var restart_timer: float = 0.0
 
 func bullet_hit():
 	is_dead = true
@@ -44,6 +46,11 @@ func get_input2():
 
 func _physics_process(delta):
 	if is_dead:
+		restart_timer += delta
+
+		if restart_timer >= restart_time:
+			get_tree().reload_current_scene()
+
 		return
 	
 	if is_player2:
