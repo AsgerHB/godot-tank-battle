@@ -19,13 +19,13 @@ shape = SubResource( 1 )
 [node name="omega-mech-armor" type="Sprite" parent="."]
 modulate = Color( 0.337255, 0.337255, 0.337255, 1 )
 position = Vector2( -1.43051e-06, 7.45058e-09 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="ShootyPoint" type="Node2D" parent="."]
 position = Vector2( -14.1683, 0.118999 )
 scale = Vector2( 0.300864, 0.0453776 )
 script = ExtResource( 3 )
+spawn_distance = 15.0
 Bullet = ExtResource( 4 )
 
 [node name="scatter" type="Sprite" parent="."]

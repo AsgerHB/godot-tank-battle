@@ -1,11 +1,15 @@
 extends Node2D
 
 export(bool) var is_player2
+export(float) var spawn_distance
 export(PackedScene) var Bullet
 
 func shoot():
 	var b = Bullet.instance()
-	b.start(self.get_global_position(), get_parent().rotation + PI)
+	var spawn_rotation = get_parent().rotation + PI
+	var spawn_direction_vector = Vector2(1, 0).rotated(spawn_rotation)
+	var spawn_position = self.get_global_position() + spawn_direction_vector * spawn_distance
+	b.start(spawn_position, spawn_rotation)
 	get_parent().get_parent().add_child(b)
 
 func _process(delta):
