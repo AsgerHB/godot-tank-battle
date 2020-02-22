@@ -1,13 +1,12 @@
 extends KinematicBody2D
 
 export(float) var speed = 200
-export(float) var rot_speed = 0.065
+export(float) var rot_speed = 0.05
 export(bool) var is_player2
 
 var velocity: Vector2 = Vector2()
 
 var is_dead = false
-
 
 func bullet_hit():
 	is_dead = true
@@ -26,9 +25,9 @@ func get_input():
 		rotation += rot_speed
 
 	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2(-speed / 3, 0).rotated(rotation)
+		velocity = Vector2(-speed, 0).rotated(rotation)
 	if Input.is_action_pressed("ui_down"):
-		velocity = Vector2(speed, 0).rotated(rotation)
+		velocity = Vector2(speed / 1.5, 0).rotated(rotation)
 
 func get_input2():
 	velocity = Vector2()
@@ -39,9 +38,9 @@ func get_input2():
 		rotation += rot_speed
 
 	if Input.is_action_pressed("up2"):
-		velocity = Vector2(-speed / 2, 0).rotated(rotation)
+		velocity = Vector2(-speed, 0).rotated(rotation)
 	if Input.is_action_pressed("down2"):
-		velocity = Vector2(speed, 0).rotated(rotation)
+		velocity = Vector2(speed / 1.5, 0).rotated(rotation)
 
 func _physics_process(delta):
 	if is_dead:
@@ -52,6 +51,5 @@ func _physics_process(delta):
 	else:
 		get_input()
 	
-	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
 	velocity = Vector2.ZERO
