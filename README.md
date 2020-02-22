@@ -3,6 +3,7 @@
 ## TODO
 
 - [x] Tank movement
-- [ ] Bullets with bounce
-- [ ] Sprites
+- [x] Bullets with bounce
+- [x] Sprites
+- [x] Tracks
 - [ ] Levels and generation
