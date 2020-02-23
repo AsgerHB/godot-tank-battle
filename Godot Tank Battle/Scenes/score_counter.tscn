@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/score_counter.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Explosion.tscn" type="PackedScene" id=2]
 
 [node name="score_counter" type="Control"]
 anchor_left = 0.5
@@ -10,8 +11,10 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
-player1_score = NodePath("ColorRect3/player1_score")
-player2_score = NodePath("ColorRect3/player2_score")
+player1_counter_path = NodePath("ColorRect3/player1_score")
+player2_counter_path = NodePath("ColorRect3/player2_score")
+player1_gets_point_particles_path = NodePath("ColorRect3/player1_score/Explosion")
+player2_gets_point_particles_path = NodePath("ColorRect3/player2_score/Explosion2")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 margin_left = -69.0
@@ -34,6 +37,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Explosion" parent="ColorRect3/player1_score" instance=ExtResource( 2 )]
+position = Vector2( 24, 6 )
+
 [node name="divider" type="Label" parent="ColorRect3"]
 margin_left = 67.4831
 margin_top = 3.35139
@@ -54,6 +60,9 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Explosion2" parent="ColorRect3/player2_score" instance=ExtResource( 2 )]
+position = Vector2( 25.3253, 6.58612 )
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect3"]
 margin_left = 3.13174
