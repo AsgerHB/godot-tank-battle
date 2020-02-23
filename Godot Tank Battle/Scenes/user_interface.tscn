@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/score_counter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Fireworks.tscn" type="PackedScene" id=2]
 
 [node name="user_interface" type="CanvasLayer"]
 
+[node name="Fireworks" parent="." instance=ExtResource( 2 )]
+position = Vector2( 452.411, 33.199 )
+
+[node name="Fireworks2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 566.496, 32.896 )
+
 [node name="score_counter" parent="." instance=ExtResource( 1 )]
+player1_gets_point_particles_path = NodePath("../Fireworks")
+player2_gets_point_particles_path = NodePath("../Fireworks2")
