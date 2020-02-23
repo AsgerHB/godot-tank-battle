@@ -5,10 +5,12 @@ export(float) var spawn_distance
 export(float) var bullet_lifetime = 3
 export(int) var max_active_bullets = 4
 export(float) var shoot_delay = 0.4
+export(NodePath) var shoot_sound_path
 
 export(PackedScene) var Bullet
 
 var world: Node2D
+onready var shoot_sound = get_node(shoot_sound_path)
 
 var active_bullets: int = 0
 
@@ -46,6 +48,8 @@ func shoot():
 	
 	world.add_child(b)
 	b.shooter = self
+	
+	shoot_sound.playing = true
 
 func register_bullet_freed():
 	active_bullets -= 1
