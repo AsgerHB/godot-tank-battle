@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/322481__liamg-sfx__explosion-1.wav-2d1044720f2fe717a3c1e7410c8ce3da.sample"
+
+[deps]
+
+source_file="res://sound/322481__liamg-sfx__explosion-1.wav"
+dest_files=[ "res://.import/322481__liamg-sfx__explosion-1.wav-2d1044720f2fe717a3c1e7410c8ce3da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
