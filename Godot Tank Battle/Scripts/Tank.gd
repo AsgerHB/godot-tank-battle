@@ -48,10 +48,13 @@ func _ready():
 	$ShootyPoint.world = world
 	last_track_pos = self.get_global_position()
 	
+	var color: Color
 	if is_player2:
-		self.modulate = Color(0.5, 1, 0.5)
+		color = Color(0.5, 1, 0.5)
 	else:
-		self.modulate = Color(1, 0.5, 0.5)
+		color = Color(1, 0.5, 0.5)
+	
+	$Vehicle/color_mask.modulate = color
 
 func get_input():
 	velocity = Vector2()

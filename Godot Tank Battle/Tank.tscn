@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/blocks/turrets/scatter.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/Explosion.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sound/456324__henrikcederblad__sfx-motor-loop-001.wav" type="AudioStream" id=8]
 [ext_resource path="res://sound/156031__iwiploppenisse__explosion.wav" type="AudioStream" id=9]
+[ext_resource path="res://sound/322481__liamg-sfx__explosion-1.wav" type="AudioStream" id=10]
+[ext_resource path="res://sprites_custom/scatter_color_mask.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.4777, 22.3164 )
@@ -24,17 +26,30 @@ spawn_distance = 15.0
 bullet_lifetime = 8.0
 Bullet = ExtResource( 4 )
 
-[node name="Vehicle" type="Sprite" parent="."]
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="ShootyPoint"]
+position = Vector2( 83.094, -2.62244 )
+scale = Vector2( 3.32376, 22.0373 )
+stream = ExtResource( 10 )
+volume_db = 1.0
+
+[node name="Vehicle" type="Node2D" parent="."]
+
+[node name="omega-mech-armor" type="Sprite" parent="Vehicle"]
+modulate = Color( 0.47451, 0.47451, 0.47451, 1 )
+position = Vector2( -1.43051e-06, 7.45058e-09 )
+z_index = 100
+texture = ExtResource( 5 )
+
+[node name="Vehicle" type="Sprite" parent="Vehicle"]
 rotation = -1.57079
 z_index = 100
 texture = ExtResource( 2 )
 
-[node name="omega-mech-armor" type="Sprite" parent="Vehicle"]
-modulate = Color( 0.337255, 0.337255, 0.337255, 1 )
-position = Vector2( -7.45956e-09, -1.43051e-06 )
-rotation = 1.57079
-z_index = -1
-texture = ExtResource( 5 )
+[node name="color_mask" type="Sprite" parent="Vehicle"]
+modulate = Color( 1, 0, 0.937255, 1 )
+rotation = -1.57079
+z_index = 100
+texture = ExtResource( 11 )
 
 [node name="Wreck" type="Sprite" parent="."]
 visible = false
