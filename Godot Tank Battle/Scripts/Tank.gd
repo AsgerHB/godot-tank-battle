@@ -31,7 +31,7 @@ func bullet_hit():
 	$Explosion.start()
 	$Sounds/Explode.playing = true
 
-	if is_player2:
+	if not is_player2:
 		Global.player1_score += 1
 	else:
 		Global.player2_score += 1

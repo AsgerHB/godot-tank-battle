@@ -42,6 +42,10 @@ func _ready():
 	
 	player1_gets_point_particles = get_node(player1_gets_point_particles_path)
 	player2_gets_point_particles = get_node(player2_gets_point_particles_path)
+	
+	player1_gets_point_particles.get_child(0).modulate = Color(0, 1, 0)
+	player2_gets_point_particles.get_child(0).modulate = Color(1, 0, 0)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
