@@ -6,7 +6,6 @@ export(bool) var is_player2
 export(PackedScene) var tracks
 export(float) var track_interval = 3
 export(NodePath) var world_path
-export(NodePath) var explode_sound_path
 
 var velocity: Vector2 = Vector2()
 
@@ -20,7 +19,6 @@ var restart_timer: float = 0.0
 var shake_timer: float = 0
 
 onready var world = get_node(world_path)
-onready var explode_sound = get_node(explode_sound_path)
 
 func bullet_hit():
 	is_dead = true
@@ -29,7 +27,6 @@ func bullet_hit():
 	$CollisionShape2D.disabled = true
 
 	$Explosion.start()
-	$Sounds/Explode.playing = true
 
 	if not is_player2:
 		Global.player1_score += 1

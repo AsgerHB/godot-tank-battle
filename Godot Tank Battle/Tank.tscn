@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/blocks/turrets/scatter.png" type="Texture" id=2]
@@ -7,18 +7,12 @@
 [ext_resource path="res://sprites/mechs/mechs/omega-mech-armor.png" type="Texture" id=5]
 [ext_resource path="res://sprites/blocks/extra/rubble-2-0.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Explosion.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sound/456324__henrikcederblad__sfx-motor-loop-001.wav" type="AudioStream" id=8]
-[ext_resource path="res://sound/156031__iwiploppenisse__explosion.wav" type="AudioStream" id=9]
-[ext_resource path="res://sound/435413__v-ktor__explosion12.wav" type="AudioStream" id=10]
-[ext_resource path="res://Scenes/tracks.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.4777, 22.3164 )
 
 [node name="Tank" type="KinematicBody2D"]
 script = ExtResource( 1 )
-tracks = ExtResource( 11 )
-explode_sound_path = NodePath("Sounds/Explode")
 
 [node name="ShootyPoint" type="Node2D" parent="."]
 position = Vector2( -25, 0.119 )
@@ -26,7 +20,6 @@ scale = Vector2( 0.300864, 0.0453776 )
 script = ExtResource( 3 )
 spawn_distance = 15.0
 bullet_lifetime = 8.0
-shoot_sound_path = NodePath("../Sounds/Shoot")
 Bullet = ExtResource( 4 )
 
 [node name="Vehicle" type="Sprite" parent="."]
@@ -51,18 +44,3 @@ texture = ExtResource( 6 )
 shape = SubResource( 1 )
 
 [node name="Explosion" parent="." instance=ExtResource( 7 )]
-
-[node name="Sounds" type="Node2D" parent="."]
-
-[node name="Motor" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 8 )
-volume_db = -10.805
-autoplay = true
-
-[node name="Shoot" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 10 )
-volume_db = -10.805
-
-[node name="Explode" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 9 )
-volume_db = -10.805
