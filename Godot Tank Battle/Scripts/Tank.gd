@@ -5,7 +5,6 @@ export(float) var rot_speed = 0.0375
 export(bool) var is_player2
 export(PackedScene) var tracks
 export(float) var track_interval = 3
-
 export(NodePath) var world_path
 
 var velocity: Vector2 = Vector2()
@@ -26,6 +25,8 @@ func bullet_hit():
 	$Wreck.visible = true
 	$Vehicle.visible = false
 	$CollisionShape2D.disabled = true
+	
+	$Explosion.start()
 
 func _ready():
 	$ShootyPoint.is_player2 = is_player2
