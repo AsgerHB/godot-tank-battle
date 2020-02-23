@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Tank.tscn" type="PackedScene" id=1]
-[ext_resource path="res://LuksusScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Ice1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/tracks.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/user_interface.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LevelLoader.gd" type="Script" id=6]
+[ext_resource path="res://Levels/Ice2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Stone1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Stone2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Blue1.tscn" type="PackedScene" id=10]
 
 [node name="World" type="Node2D"]
 
@@ -31,4 +36,6 @@ is_player2 = true
 tracks = ExtResource( 4 )
 world_path = NodePath("../..")
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Scene" type="Node2D" parent="."]
+script = ExtResource( 6 )
+scenes = [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
