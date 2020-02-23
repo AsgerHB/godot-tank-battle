@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/score_counter.gd" type="Script" id=1]
+
+[node name="score_counter" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+player1_score = NodePath("ColorRect3/player1_score")
+player2_score = NodePath("ColorRect3/player2_score")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -69.0
+margin_top = 24.0
+margin_right = 65.0
+margin_bottom = 43.0
+color = Color( 0.12549, 0.12549, 0.12549, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player1_score" type="Label" parent="ColorRect3"]
+margin_left = 19.4831
+margin_top = 3.35139
+margin_right = 67.4831
+margin_bottom = 17.3514
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="divider" type="Label" parent="ColorRect3"]
+margin_left = 67.4831
+margin_top = 3.35139
+margin_right = 79.4831
+margin_bottom = 17.3514
+text = ":"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player2_score" type="Label" parent="ColorRect3"]
+margin_left = 69.0
+margin_top = 3.35139
+margin_right = 117.0
+margin_bottom = 17.3514
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect3"]
+margin_left = 3.13174
+margin_top = 3.35139
+margin_right = 16.1317
+margin_bottom = 16.3514
+color = Color( 0.439216, 1, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect3"]
+margin_left = 117.0
+margin_top = 3.35139
+margin_right = 130.0
+margin_bottom = 16.3514
+color = Color( 0.882353, 0.439216, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

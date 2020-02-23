@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://LuksusScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/tracks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/user_interface.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -16,6 +17,8 @@ position = Vector2( 348.129, 302.58 )
 scale = Vector2( 94.1852, -19.5017 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[node name="CanvasLayer" parent="Cam/Camera2D" instance=ExtResource( 5 )]
 
 [node name="Player" parent="Cam" instance=ExtResource( 1 )]
 position = Vector2( 146.218, 106.512 )
