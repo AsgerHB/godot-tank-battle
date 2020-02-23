@@ -13,7 +13,7 @@ func _process(delta):
 		)
 	)
 
-	var target_zoom = clamp(abs(player1_pos.distance_to(player2_pos)) / 300, 1, 1.75)
+	var target_zoom = clamp(abs(player1_pos.distance_to(player2_pos)) / 300, 1.5, 2)
 	current_zoom = lerp(current_zoom, target_zoom, delta * 5)
 
 	$Camera2D.set_zoom(

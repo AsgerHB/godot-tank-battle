@@ -21,12 +21,12 @@ zoom = Vector2( 0.5, 0.5 )
 [node name="CanvasLayer" parent="Cam/Camera2D" instance=ExtResource( 5 )]
 
 [node name="Player" parent="Cam" instance=ExtResource( 1 )]
-position = Vector2( 146.218, 106.512 )
+position = Vector2( -372.395, -157.83 )
 tracks = ExtResource( 4 )
 world_path = NodePath("../..")
 
 [node name="Player2" parent="Cam" instance=ExtResource( 1 )]
-position = Vector2( 675.666, 445.559 )
+position = Vector2( 766.297, 750.181 )
 is_player2 = true
 tracks = ExtResource( 4 )
 world_path = NodePath("../..")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/blocks/turrets/scatter.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://sprites/mechs/mechs/omega-mech-armor.png" type="Texture" id=5]
 [ext_resource path="res://sprites/blocks/extra/rubble-2-0.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Explosion.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sound/456324__henrikcederblad__sfx-motor-loop-001.wav" type="AudioStream" id=8]
+[ext_resource path="res://sound/156031__iwiploppenisse__explosion.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.4777, 22.3164 )
@@ -44,3 +46,10 @@ texture = ExtResource( 6 )
 shape = SubResource( 1 )
 
 [node name="Explosion" parent="." instance=ExtResource( 7 )]
+
+[node name="DieSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Driving" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = 1.0
