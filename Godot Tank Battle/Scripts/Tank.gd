@@ -26,6 +26,10 @@ func bullet_hit():
 	$Wreck.visible = true
 	$Vehicle.visible = false
 	$CollisionShape2D.disabled = true
+	if is_player2:
+		Global.player1_score += 1
+	else:
+		Global.player2_score += 1
 
 func _ready():
 	$ShootyPoint.is_player2 = is_player2
@@ -78,8 +82,7 @@ func _physics_process(delta):
 		restart_timer += delta
 
 		if restart_timer >= restart_time:
-			Global.new_round(self.is_player2)
-			get_tree().reload_current_scene()
+			Global.new_round()
 
 		return
 	
