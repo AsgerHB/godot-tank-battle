@@ -8,6 +8,8 @@ export(float) var shoot_delay = 0.4
 
 export(PackedScene) var Bullet
 
+var world: Node2D
+
 var active_bullets: int = 0
 
 var shoot_timer: float = 0
@@ -42,7 +44,7 @@ func shoot():
 	b.start(spawn_position, spawn_rotation)
 	b.lifetime = bullet_lifetime
 	
-	get_tree().get_root().get_child(0).add_child(b)
+	world.add_child(b)
 	b.shooter = self
 
 func register_bullet_freed():

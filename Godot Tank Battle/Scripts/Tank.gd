@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 export(float) var speed = 200
-export(float) var rot_speed = 0.05
+export(float) var rot_speed = 0.0375
 export(bool) var is_player2
 export(PackedScene) var tracks
 export(float) var track_interval = 3
+
+export(NodePath) var world_path
 
 var velocity: Vector2 = Vector2()
 
@@ -15,6 +17,10 @@ var is_dead = false
 const restart_time: float = 2.0
 var restart_timer: float = 0.0
 
+var shake_timer: float = 0
+
+onready var world = get_node(world_path)
+
 func bullet_hit():
 	is_dead = true
 	$Wreck.visible = true
@@ -23,6 +29,7 @@ func bullet_hit():
 
 func _ready():
 	$ShootyPoint.is_player2 = is_player2
+	$ShootyPoint.world = world
 	last_track_pos = self.get_global_position()
 	
 	if is_player2:
