@@ -126,7 +126,6 @@ func _physics_process(delta):
 			$Driving.play()
 
 		if self.should_pitch_again:
-			print("hwat")
 			$Driving.pitch_scale = driving_pitch + rand_range(-0.15, 0.15)
 			self.should_pitch_again = false
 	else:
