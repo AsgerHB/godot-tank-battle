@@ -32,4 +32,4 @@ func blink():
 		title2.visible = false
 
 func start():
-	print("let's a-go!")
+	get_tree().change_scene("res://Scenes/World.tscn")
