@@ -64,7 +64,7 @@ func draw_tracks():
 		var t = tracks.instance()
 		t.position = current_pos
 		t.rotation = self.rotation
-		get_tree().get_root().add_child(t)
+		get_tree().get_root().get_child(1).add_child(t)
 
 func _physics_process(delta):
 	if is_dead:
